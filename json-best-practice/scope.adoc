@@ -2,6 +2,10 @@
 
 This OGC® document provides a set of best practices on how to use JSON as an encoding for OGC standards.
 
+This OGC® document explores the ways in which conceptual models may be used to enable JSON encodings to demonstrate consistnecy with abstract specifications and other encoding standards.
+
+This OGC® document explores the requirements for content validation and mechanisms that can provide such validation.
+
 In addition, this OGC® document provides a set of rules on how to transform a UML model describing the encoding of a format or a service description into a JSON and JSON-LD encoding and their corresponding JSON schemas. The rules have been applied and validated in a service metadata document based on OWS Common.
 
 This OGC® document is applicable to OGC data and metadata encodings and OGC services willing to provide a JSON encoding for fast adoption in web browsers.
