@@ -107,13 +107,25 @@ It follows RFC3986 and supports both a URI and a URN. The following text represe
 }
 ----
 
-[[JSON_Schema]]
-=== JSON Schema
-==== Why OGC needs JSON validation
+[[Validation]]
+=== Why OGC needs JSON validation
 OGC is transitioning from standards that were written in plain English to a robust way of written standards based on requirements classes that are linked to conformance test classes. Conformance tests are designed to determine if implementations follow the standard. When an XML encoding is involved, standards that provide XML Schema files defining each data type, provide a straightforward way to check if a document follows the standard: _validating_ the XML document with XSD, RelaxNG or Schematron (or a combination of them).
 
 If OGC is going to adopt JSON as an alternative encoding for data models, some automatic way of validating if objects in the JSON file follow the data models proposed by the corresponding standard could be also convenient.
 
+The following sections explore methodologies that may enable JSON encodings to provide validation of content.
+
+[[RDFValidation]]
+==== RDF Validation candidate
+
+JSON payloads implementing JSON-LD may be interpreted, or partially interpreted, as RDF graphs.  A set of tools for validation of RDF graphs is emerging from the W3 standards body, including SHACL https://www.w3.org/TR/shacl and SHEX http://shex.io/.
+
+It is proposed that partial validation of an RDF graph, interpreted from a JSON payload, is sufficient for many scenarios.
+
+This style of validation may be described as 'weaker validation'.  'Weaker validation' is characterised as carrying a lighter overhead for implementation, providing a less robust validation of content, and freely supporting non-conflicting extension.
+
+
+[[JSON_Schema]]
 ==== JSON Schema standard candidate
 JSON Schema is intended for validation and documentation of data models. It acts in a similar way to XSD for an XML file.
 Indeed, some applications (such us XML Validator Buddy) are able to combine a JSON file with its corresponding JSON schema to test and validate if the content of the JSON file corresponds to the expected data model. Several implementations of JSON schema validation are available to be used also on-line. An example is the one available in this URL http://json-schema-validator.herokuapp.com/ and the corresponding opensource code available in github https://github.com/daveclayton/json-schema-validator.
